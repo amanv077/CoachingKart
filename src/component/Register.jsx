@@ -6,6 +6,7 @@ const containerClasses =
   "min-h-screen bg-background text-foreground flex flex-col";
 const navLinkClasses = "hover:text-primary";
 
+import Footer from "./Footer";
 // Use the new Navbar component here
 import Navbar from "./Navbar"; // Adjust the import path as needed
 
@@ -189,6 +190,7 @@ const Register = () => (
   <div className={containerClasses}>
     <Navbar /> {/* Use the new Navbar component here */}
     <StudentProfileForm />
+    <Footer />
   </div>
 );
 

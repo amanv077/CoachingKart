@@ -2,6 +2,7 @@
 import { useState } from "react"; // Import useState for state management
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 // Shared Tailwind CSS classes
 const sharedClasses = {
@@ -28,6 +29,7 @@ const Offline = () => {
           <Main />
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -46,8 +46,16 @@ const Header = () => (
 const LoginForm = ({ onSubmit }) => (
   <form className="mt-8 space-y-6" onSubmit={onSubmit}>
     <div className="space-y-4">
-      <InputField id="email" type="email" placeholder="Email address" />
-      <InputField id="password" type="password" placeholder="Password" />
+      <InputField
+        id="email"
+        type="email"
+        placeholder="We are on Early Stage Skip Login"
+      />
+      <InputField
+        id="password"
+        type="password"
+        placeholder="Just Click On Login "
+      />
     </div>
     <div className={containerClasses}>
       <RememberMe />

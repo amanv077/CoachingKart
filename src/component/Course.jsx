@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 // Tailwind CSS styling classes for reusable components
 const sharedClasses = {
@@ -291,6 +292,7 @@ const App = () => {
       ) : (
         <BuyNowPage course={selectedCourse} onBack={handleBack} />
       )}
+      <Footer />
     </div>
   );
 };

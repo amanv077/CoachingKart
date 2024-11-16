@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 const buttonClasses =
   "px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500";
@@ -19,6 +20,7 @@ const Online = () => {
         <Sidebar />
         <CoachingGrid />
       </div>
+      <Footer />
     </div>
   );
 };
