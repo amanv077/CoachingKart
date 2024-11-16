@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar"; // Import Navbar
 import "./HomePage.css"; // Import external styles
+import Footer from "./Footer";
 
 const HomePage = () => {
   return (
@@ -8,6 +9,7 @@ const HomePage = () => {
       <Navbar />
       <HeroSection />
       <FloatingAnimations />
+      <Footer />
     </div>
   );
 };
