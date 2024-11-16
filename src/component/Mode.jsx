@@ -1,18 +1,13 @@
-/* eslint-disable react/prop-types */
 import { useNavigate } from "react-router-dom";
-import Navbar from "./Navbar"; // Import the Navbar component
+import Navbar from "./Navbar"; // Import Navbar
+import "./HomePage.css"; // Import external styles
 
-// Shared Tailwind CSS class strings
-// const NAV_LINK_CLASSES = "hover:text-primary";
-const BUTTON_CLASSES =
-  "bg-primary text-primary-foreground py-2 px-4 rounded-lg hover:bg-primary/80";
-const FLEX_CENTER_CLASSES = "flex justify-center items-center";
-
-const Mode = () => {
+const HomePage = () => {
   return (
-    <div className="bg-background text-foreground">
-      <Navbar /> {/* Use the Navbar component */}
+    <div className="homepage-container">
+      <Navbar />
       <HeroSection />
+      <FloatingAnimations />
     </div>
   );
 };
@@ -21,28 +16,57 @@ const HeroSection = () => {
   const navigate = useNavigate();
 
   return (
-    <section
-      className={`${FLEX_CENTER_CLASSES} flex-col h-screen bg-gradient-to-r from-secondary to-accent text-center`}
-    >
-      <h1 className="text-4xl font-bold mb-6">Choose Your Coaching Style</h1>
-      <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 sm:mb-6">
-        <Button label="Online Coaching" onClick={() => navigate("/online")} />
-        <Button label="Offline Coaching" onClick={() => navigate("/offline")} />
-        <Button
-          label="Already Enrolled"
-          onClick={() => navigate("/enrolled")}
-        />
+    <section className="hero-section">
+      <h1>Empower Your Learning Journey</h1>
+      <p>
+        Discover the best coaching tailored to your needs. Choose from online,
+        offline, or hybrid options and unlock your full potential with our
+        expert guidance.
+      </p>
+      <div className="hero-buttons">
+        <button onClick={() => navigate("/online")}>
+          Explore Online Coaching
+        </button>
+        <button onClick={() => navigate("/offline")}>
+          Explore Offline Coaching
+        </button>
+        <button onClick={() => navigate("/enrolled")}>
+          View Enrolled Courses
+        </button>
       </div>
     </section>
   );
 };
 
-const Button = ({ label, onClick }) => {
-  return (
-    <button onClick={onClick} className={BUTTON_CLASSES}>
-      {label}
-    </button>
-  );
-};
+const FloatingAnimations = () => (
+  <div className="floating-animations">
+    {/* Book */}
+    <img
+      src="https://cdn-icons-png.flaticon.com/512/484/484560.png"
+      alt="Book"
+      className="animate-floating"
+      style={{ position: "absolute", top: "20%", left: "15%", width: "50px" }}
+    />
+    {/* Graduation Cap */}
+    <img
+      src="https://cdn-icons-png.flaticon.com/512/2977/2977965.png"
+      alt="Graduation Cap"
+      className="animate-floating-slow"
+      style={{ position: "absolute", top: "30%", left: "80%", width: "70px" }}
+    />
+    {/* Pencil */}
+    <img
+      src="https://cdn-icons-png.flaticon.com/512/127/127472.png"
+      alt="Pencil"
+      className="animate-floating"
+      style={{
+        position: "absolute",
+        bottom: "10%",
+        right: "10%",
+        width: "40px",
+      }}
+    />
+  </div>
+);
 
-export default Mode;
+export default HomePage;

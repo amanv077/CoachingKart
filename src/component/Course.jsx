@@ -18,12 +18,12 @@ const HeroSection = () => (
     <div className={sharedClasses.sectionContent}>
       <div className="m-5">
         <img
-          src="https://community.thriveglobal.com/wp-content/uploads/2017/09/coaching-2738523_1920.jpg"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaTGLuPM8khcA5vxY5F9hsHL0fHvTW1_tJTQ&s"
           alt="Coaching Image"
-          className={`${sharedClasses.image} `}
+          className={`${sharedClasses.image}`}
         />
       </div>
-      <div className="">
+      <div>
         <h1 className="text-4xl font-bold mb-2">Excellence Coaching Center</h1>
         <p className="mb-4 text-lg">
           We provide top-notch coaching for competitive exams with experienced
@@ -45,11 +45,12 @@ const CourseCard = ({
   price,
   startDate,
   duration,
+  image,
   onEnroll,
 }) => (
-  <div className={`${sharedClasses.card} h-96`}>
+  <div className={`${sharedClasses.card} h-auto`}>
     <img
-      src="https://foundr.com/wp-content/uploads/2023/04/How-to-create-an-online-course.jpg"
+      src={image}
       alt="Course Image"
       className={`${sharedClasses.image} h-32`}
     />
@@ -66,7 +67,7 @@ const CourseCard = ({
     <p className="text-sm mb-1">
       <strong>Start Date:</strong> {startDate}
     </p>
-    <p className="text-sm">
+    <p className="text-sm mb-1">
       <strong>Duration:</strong> {duration}
     </p>
     <button className={sharedClasses.button} onClick={onEnroll}>
@@ -84,6 +85,8 @@ const CoursesSection = ({ onEnroll }) => {
       price: 2500,
       startDate: "January 15, 2024",
       duration: "3 months",
+      image:
+        "https://i.pinimg.com/736x/6c/2d/40/6c2d40e51b303afa827ba31f73b48223.jpg",
     },
     {
       title: "Physics for Competitive Exams",
@@ -92,6 +95,8 @@ const CoursesSection = ({ onEnroll }) => {
       price: 3000,
       startDate: "February 10, 2024",
       duration: "4 months",
+      image:
+        "https://t3.ftcdn.net/jpg/02/08/71/98/360_F_208719890_PaMiwolEk5efWiJH9Z1ZQXqEw6AoC6OS.jpg",
     },
     {
       title: "Chemistry Essentials",
@@ -100,6 +105,7 @@ const CoursesSection = ({ onEnroll }) => {
       price: 2000,
       startDate: "March 5, 2024",
       duration: "2 months",
+      image: "https://r2.erweima.ai/i/4fP8Fxl1St2EeMZLJGUb4A.png",
     },
     {
       title: "English Language Proficiency",
@@ -108,6 +114,29 @@ const CoursesSection = ({ onEnroll }) => {
       price: 1500,
       startDate: "April 1, 2024",
       duration: "6 weeks",
+      image:
+        "https://i.pinimg.com/736x/3c/c0/c3/3cc0c34c35405b8b2c6ae7b5e9cbae9b.jpg",
+    },
+    // Additional courses
+    {
+      title: "Web Development Fundamentals",
+      teachers: "Jane Doe, Tim Cook",
+      subjects: "HTML, CSS, JavaScript",
+      price: 2200,
+      startDate: "May 20, 2024",
+      duration: "3 months",
+      image:
+        "https://www.pngkey.com/png/detail/249-2496182_web-design-development-web-developer-logo-png.png",
+    },
+    {
+      title: "Machine Learning Basics",
+      teachers: "Robert Johnson, Emma Clark",
+      subjects: "Data Science, Algorithms",
+      price: 3500,
+      startDate: "June 1, 2024",
+      duration: "5 months",
+      image:
+        "https://www.pngitem.com/pimgs/m/346-3460443_machine-learning-course-near-me-machine-learning-logo.png",
     },
   ];
 
@@ -126,7 +155,6 @@ const CoursesSection = ({ onEnroll }) => {
     </section>
   );
 };
-
 const BuyNowPage = ({ course, onBack }) => {
   const [studentDetails, setStudentDetails] = useState({
     name: "",
@@ -142,31 +170,43 @@ const BuyNowPage = ({ course, onBack }) => {
   const totalAmount = course.price;
 
   return (
-    <div className="p-8 bg-gray-100">
-      <h2 className="text-3xl font-bold mb-6">Buy Now</h2>
-      <div className="bg-white p-6 rounded-lg shadow-lg mb-6">
-        <h3 className="text-xl font-semibold">{course.title}</h3>
-        <p>
+    <div className="p-8 bg-gradient-to-r from-blue-50 via-blue-100 to-white">
+      <h2 className="text-4xl font-bold mb-8 text-center text-gray-800">
+        Buy Now
+      </h2>
+      <div className="bg-white p-8 rounded-lg shadow-xl mb-8 max-w-lg mx-auto">
+        <h3 className="text-2xl font-semibold text-gray-800 mb-2">
+          {course.title}
+        </h3>
+        <p className="text-gray-600">
           <strong>Subjects:</strong> {course.subjects}
         </p>
-        <p>
+        <p className="text-gray-600">
           <strong>Price:</strong> ₹{course.price}
         </p>
-        <p>
+        <p className="text-gray-600">
           <strong>Duration:</strong> {course.duration}
         </p>
-        <p>
+        <p className="text-gray-600 mb-4">
           <strong>Teachers:</strong> {course.teachers}
         </p>
-        <button className="mt-4 text-blue-600 hover:underline" onClick={onBack}>
-          Back
+        <button
+          className="mt-4 text-blue-600 hover:underline focus:outline-none"
+          onClick={onBack}
+        >
+          Back to Courses
         </button>
       </div>
 
-      <h3 className="text-2xl font-bold mb-4">Student Details</h3>
-      <form className="bg-white p-6 rounded-lg shadow-lg">
+      <h3 className="text-3xl font-bold mb-6 text-center text-gray-800">
+        Student Details
+      </h3>
+      <form className="bg-white p-8 rounded-lg shadow-lg max-w-lg mx-auto space-y-6">
         <div className="mb-4">
-          <label className="block mb-2" htmlFor="name">
+          <label
+            className="block text-sm font-medium text-gray-700 mb-2"
+            htmlFor="name"
+          >
             Name
           </label>
           <input
@@ -175,12 +215,15 @@ const BuyNowPage = ({ course, onBack }) => {
             name="name"
             value={studentDetails.name}
             onChange={handleChange}
-            className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
         </div>
         <div className="mb-4">
-          <label className="block mb-2" htmlFor="email">
+          <label
+            className="block text-sm font-medium text-gray-700 mb-2"
+            htmlFor="email"
+          >
             Email
           </label>
           <input
@@ -189,12 +232,15 @@ const BuyNowPage = ({ course, onBack }) => {
             name="email"
             value={studentDetails.email}
             onChange={handleChange}
-            className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
         </div>
         <div className="mb-4">
-          <label className="block mb-2" htmlFor="number">
+          <label
+            className="block text-sm font-medium text-gray-700 mb-2"
+            htmlFor="number"
+          >
             Phone Number
           </label>
           <input
@@ -203,13 +249,18 @@ const BuyNowPage = ({ course, onBack }) => {
             name="number"
             value={studentDetails.number}
             onChange={handleChange}
-            className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
         </div>
         <div className="flex justify-between items-center">
-          <p className="text-xl font-semibold">Total Amount: ₹{totalAmount}</p>
-          <button type="submit" className={sharedClasses.button}>
+          <p className="text-xl font-semibold text-gray-800">
+            Total Amount: ₹{totalAmount}
+          </p>
+          <button
+            type="submit"
+            className="py-3 px-6 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 focus:ring-4 focus:ring-blue-500 transition duration-300"
+          >
             Pay Now
           </button>
         </div>

@@ -155,37 +155,37 @@ const Main = () => {
       name: "Elite Coaching Center",
       location: "Delhi",
       rating: 4.5,
-      img: "https://community.thriveglobal.com/wp-content/uploads/2017/09/coaching-2738523_1920.jpg",
+      img: "https://elitecoachingcenter.com/wp-content/uploads/2014/09/Elite.png",
     },
     {
       name: "Premier Learning Hub",
       location: "Mumbai",
       rating: 4.7,
-      img: "https://community.thriveglobal.com/wp-content/uploads/2017/09/coaching-2738523_1920.jpg",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDb9Y1-AEdUS-XQVgDqS6IquzeBW_QDLOSlg&s",
     },
     {
       name: "Success Academy",
       location: "Bangalore",
       rating: 4.8,
-      img: "https://community.thriveglobal.com/wp-content/uploads/2017/09/coaching-2738523_1920.jpg",
+      img: "https://successacademysb.com/wp-content/uploads/2023/04/SASB-Circle-Alternate-Logo-web-1.png",
     },
     {
       name: "Bright Future Institute",
       location: "Chennai",
       rating: 4.6,
-      img: "https://community.thriveglobal.com/wp-content/uploads/2017/09/coaching-2738523_1920.jpg",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaxD-V0eSw_ePR46elgtW7sliCewGWk4znOg&s",
     },
     {
       name: "Achiever's Point",
       location: "Hyderabad",
       rating: 4.4,
-      img: "https://community.thriveglobal.com/wp-content/uploads/2017/09/coaching-2738523_1920.jpg",
+      img: "https://play-lh.googleusercontent.com/4rtekwvkRfoNIC2UwMlYVGeNA0GerfZcb-1LgJY5ZWsI1i6rJ8JYFEH4f4uKrBQhSA",
     },
     {
       name: "Aspire Coaching",
       location: "Kolkata",
       rating: 4.3,
-      img: "https://community.thriveglobal.com/wp-content/uploads/2017/09/coaching-2738523_1920.jpg",
+      img: "https://lh3.googleusercontent.com/proxy/H0m5MFrMBg013azXl0KC9mNQsTIG2yvBV5vF5E_rZQB238CHZOcAl38vqPdv7eDN2QHxORbcpecTH5X8FjTU1JspUzKg5Orslg",
     },
   ];
 

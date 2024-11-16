@@ -1,7 +1,7 @@
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import logo from "../assets/logo.jpg"; // Import the logo
+import logo from "../assets/logo.png"; // Import the logo
 
 const navigation = [
   { name: "Home", to: "/mode", current: true },
@@ -25,26 +25,29 @@ export default function Navbar() {
     location.pathname === "/" || location.pathname === "/register";
 
   return (
-    <Disclosure as="nav" className="bg-gray-50 shadow-md">
+    <Disclosure as="nav" className="bg-gray-50 shadow-lg">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           {/* Logo and Navigation */}
-          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-            {/* Logo */}
-            <div className="flex items-center">
-              <img src={logo} alt="Coaching Logo" className="h-12 w-auto" />
+          <div className="flex flex-1 items-center justify-between sm:items-stretch sm:justify-start">
+            {/* Logo with Link */}
+            <div
+              className="flex items-center cursor-pointer"
+              onClick={() => navigate("/mode")}
+            >
+              <img src={logo} alt="Coaching Logo" className="h-16 w-auto " />
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden sm:ml-6 sm:flex sm:items-center sm:space-x-6">
+            <div className="hidden sm:ml-6 sm:flex sm:items-center sm:space-x-8">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.to}
                   className={classNames(
                     location.pathname === item.to
-                      ? "bg-gray-700 text-white"
-                      : "text-gray-700 hover:bg-gray-700 hover:text-white",
+                      ? "text-black font-semibold"
+                      : "text-gray-600 hover:text-black hover:underline",
                     "rounded-md px-3 py-2 text-sm font-medium transition duration-300"
                   )}
                   aria-current={
@@ -62,7 +65,7 @@ export default function Navbar() {
             <div className="absolute inset-y-0 right-0 flex items-center pr-4">
               <button
                 onClick={handleSignOut}
-                className="bg-red-500 text-white rounded-md px-3 py-2 text-sm font-semibold hover:bg-red-600 transition duration-300"
+                className="bg-red-500 text-white rounded-md px-4 py-2 text-sm font-semibold hover:bg-red-600 transition duration-300"
               >
                 Sign Out
               </button>
@@ -71,7 +74,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
-            <Disclosure.Button className="inline-flex items-center justify-center p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+            <Disclosure.Button className="inline-flex items-center justify-center p-2 text-gray-500 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black">
               <span className="sr-only">Open main menu</span>
               <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
               <XMarkIcon className="hidden h-6 w-6" aria-hidden="true" />
@@ -90,8 +93,8 @@ export default function Navbar() {
               to={item.to}
               className={classNames(
                 location.pathname === item.to
-                  ? "bg-gray-900 text-white"
-                  : "text-gray-700 hover:bg-gray-700 hover:text-white",
+                  ? "bg-gray-700 text-white"
+                  : "text-gray-600 hover:bg-gray-300 hover:text-black",
                 "block rounded-md px-3 py-2 text-base font-medium transition duration-300"
               )}
               aria-current={location.pathname === item.to ? "page" : undefined}
@@ -104,7 +107,7 @@ export default function Navbar() {
             <Disclosure.Button
               as="button"
               onClick={handleSignOut}
-              className="w-full text-left bg-red-500 text-white block rounded-md px-3 py-2 text-base font-medium hover:bg-red-600 transition duration-300"
+              className="w-full text-left bg-red-500 text-white block rounded-md px-4 py-2 text-base font-medium hover:bg-red-600 transition duration-300"
             >
               Sign Out
             </Disclosure.Button>
