@@ -6,8 +6,6 @@ import Footer from "./Footer";
 // Tailwind CSS styling classes for reusable components
 const sharedClasses = {
   card: "bg-white text-gray-800 p-4 md:p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl",
-  button:
-    "mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50",
   sectionTitle: "text-3xl font-bold mb-6 text-center text-gray-900",
   sectionContainer: "p-8 bg-gray-100",
   sectionContent: "max-w-6xl mx-auto flex flex-col md:flex-row items-center",
@@ -71,8 +69,17 @@ const CourseCard = ({
     <p className="text-sm mb-1">
       <strong>Duration:</strong> {duration}
     </p>
-    <button className={sharedClasses.button} onClick={onEnroll}>
+    <button
+      className="mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 mr-8"
+      onClick={onEnroll}
+    >
       Enroll Now
+    </button>
+    <button
+      className="mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+      onClick={onEnroll}
+    >
+      Take Demo
     </button>
   </div>
 );

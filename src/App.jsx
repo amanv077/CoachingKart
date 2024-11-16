@@ -6,6 +6,7 @@ import Course from "./component/Course";
 import Offline from "./component/Offline";
 import Register from "./component/Register";
 import Enrolled from "./component/Enrolled";
+import OfflineDemo from "./component/OfflineDemo";
 
 const App = () => (
   <Router>
@@ -17,6 +18,7 @@ const App = () => (
       <Route path="/course" element={<Course />} />
       <Route path="/register" element={<Register />} />
       <Route path="/enrolled" element={<Enrolled />} />
+      <Route path="/offline-demo" element={<OfflineDemo />} />
     </Routes>
   </Router>
 );

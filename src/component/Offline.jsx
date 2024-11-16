@@ -21,7 +21,7 @@ const sharedClasses = {
 // Main component
 const Offline = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-r from-blue-50 to-blue-200 text-gray-900">
+    <div className="min-h-screen bg-gray-50">
       <Navbar />
       <div className="p-6">
         <div className={sharedClasses.container}>
@@ -74,10 +74,22 @@ const FilterOptions = () => {
   ];
 
   return (
-    <div className="space-y-4 bg-white p-4 rounded-lg shadow-md">
-      <Select options={states} placeholder="State" />
-      <Select options={cities} placeholder="City" />
-      <Select options={courses} placeholder="Course" />
+    <div className=" bg-white flex flex-col p-4 rounded-lg shadow-md">
+      <Select
+        options={states}
+        placeholder="State"
+        className="min-w-[200px] w-full" // Set a minimum width and full width on expansion
+      />
+      <Select
+        options={cities}
+        placeholder="City"
+        className="min-w-[200px] w-full"
+      />
+      <Select
+        options={courses}
+        placeholder="Course"
+        className="min-w-[200px] w-full"
+      />
     </div>
   );
 };
@@ -95,14 +107,14 @@ const Select = ({ options }) => (
 
 // Aside component
 const Aside = () => {
-  const [isOpen, setIsOpen] = useState(false); // State to track filter visibility
+  const [isOpen, setIsOpen] = useState(true); // State to track filter visibility
 
   const toggleFilters = () => {
     setIsOpen((prev) => !prev); // Toggle the filter visibility
   };
 
   return (
-    <aside className="w-full lg:w-1/4 p-6 bg-blue-100 rounded-lg shadow-md">
+    <aside className="w-full lg:w-1/4 p-6 bg-gray-200 rounded-lg shadow-md">
       <h2 className="text-xl font-semibold mb-6 text-gray-800">Filters</h2>
       <button
         onClick={toggleFilters}
@@ -114,7 +126,7 @@ const Aside = () => {
         <div>
           <FilterOptions />
           <div className="mt-6">
-            <Filter label="Price (INR)" min={0} max={50000} unit="₹" />
+            <Filter label="Price (INR)" min={500} max={50000} unit="₹" />
             <Filter label="Rating" min={0} max={5} step={0.1} />
             <Filter label="Distance (km)" min={0} max={50} unit="km" />
           </div>
@@ -217,7 +229,7 @@ const CoachingCard = ({ center }) => {
       <p className={sharedClasses.textMuted}>Rating: {center.rating}</p>
       <button
         className={sharedClasses.button}
-        onClick={() => navigate("/course")}
+        onClick={() => navigate("/offline-demo")}
       >
         Enroll Now
       </button>
