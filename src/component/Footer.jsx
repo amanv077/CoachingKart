@@ -1,42 +1,64 @@
 const Footer = () => {
   return (
-    <div className=" bg-gray-50">
-      <div className="max-w-2xl mx-auto text-gray-900 py-10">
+    <div className="bg-gray-50 border-t border-gray-200">
+      <div className="max-w-7xl mx-auto text-gray-900 py-10 px-4 sm:px-6 lg:px-8">
+        {/* Header Section */}
         <div className="text-center">
-          <h3 className="text-3xl mb-3"> Download our Coaching~Kart app </h3>
-          <p> Find the right class, Faster </p>
-          <div className="flex justify-center my-10">
-            <div className="flex items-center border w-auto rounded-lg px-4 py-2 w-52 mx-2">
+          <h3 className="text-3xl font-bold mb-3">
+            Download the Coaching~Kart App
+          </h3>
+          <p className="text-lg text-gray-600">
+            Find the right class, faster and easier!
+          </p>
+
+          {/* Store Buttons */}
+          <div className="flex justify-center my-10 space-x-4">
+            {/* Google Play Store */}
+            <div className="flex items-center border border-gray-300 rounded-lg px-4 py-2 w-56 shadow-sm hover:shadow-md transition">
               <img
                 src="https://cdn-icons-png.flaticon.com/512/888/888857.png"
-                className="w-7 md:w-8"
+                alt="Google Play Store"
+                className="w-8 md:w-10"
               />
               <div className="text-left ml-3">
-                <p className="text-xs text-gray-900">Download on </p>
-                <p className="text-sm md:text-base"> Google Play Store </p>
+                <p className="text-xs text-gray-600">Download on</p>
+                <p className="text-sm md:text-base font-medium">
+                  Google Play Store
+                </p>
               </div>
             </div>
-            <div className="flex items-center border w-auto rounded-lg px-4 py-2 w-44 mx-2">
+
+            {/* Apple Store */}
+            <div className="flex items-center border border-gray-300 rounded-lg px-4 py-2 w-56 shadow-sm hover:shadow-md transition">
               <img
                 src="https://cdn-icons-png.flaticon.com/512/888/888841.png"
-                className="w-7 md:w-8"
+                alt="Apple Store"
+                className="w-8 md:w-10"
               />
               <div className="text-left ml-3">
-                <p className="text-xs text-gray-800">Download on </p>
-                <p className="text-sm md:text-base"> Apple Store </p>
+                <p className="text-xs text-gray-600">Download on</p>
+                <p className="text-sm md:text-base font-medium">Apple Store</p>
               </div>
             </div>
           </div>
         </div>
-        <div className="mt-5 flex flex-col md:flex-row md:justify-between items-center text-sm text-gray-800">
-          <p className="order-2 md:order-1 mt-8 md:mt-0">
-            {" "}
-            &copy; Beautiful Footer, 2021.{" "}
+
+        {/* Footer Bottom Section */}
+        <div className="mt-8 border-t border-gray-200 pt-6 flex flex-col md:flex-row md:justify-between items-center text-sm text-gray-600">
+          <p className="order-2 md:order-1 mt-6 md:mt-0 text-center md:text-left">
+            &copy; Coaching~Kart, {new Date().getFullYear()} All rights
+            reserved.
           </p>
-          <div className="order-1 md:order-2">
-            <span className="px-2">About us</span>
-            <span className="px-2 border-l">Contact us</span>
-            <span className="px-2 border-l">Privacy Policy</span>
+          <div className="order-1 md:order-2 space-x-4 text-center">
+            <a href="#" className="hover:underline">
+              About Us
+            </a>
+            <a href="#" className="border-l pl-4 hover:underline">
+              Contact Us
+            </a>
+            <a href="#" className="border-l pl-4 hover:underline">
+              Privacy Policy
+            </a>
           </div>
         </div>
       </div>

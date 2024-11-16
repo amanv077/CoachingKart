@@ -2,13 +2,11 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
-// Ensure Register page exists and is set up in routing
-
 // Shared Tailwind CSS class strings
-const containerClasses = "flex items-center justify-center";
+const containerClasses = "flex items-center justify-between";
 const textMutedClasses = "text-sm text-gray-500";
 const buttonClasses =
-  "bg-gray-200 text-gray-700 hover:bg-gray-300 px-4 py-2 rounded-md";
+  "bg-indigo-100 text-indigo-700 hover:bg-indigo-200 px-4 py-2 rounded-lg shadow-md";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -20,10 +18,10 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-100">
-      <Navbar /> {/* Insert Navbar here */}
+    <div className="min-h-screen flex flex-col bg-gray-50">
+      <Navbar />
       <div className="flex-grow flex items-center justify-center p-4">
-        <div className="max-w-md w-full space-y-8 p-10 bg-white rounded-lg shadow-lg">
+        <div className="max-w-lg w-full space-y-8 p-8 bg-white rounded-xl shadow-lg border border-gray-200">
           <Header />
           <LoginForm onSubmit={handleSubmit} />
           <RoleButtons />
@@ -37,17 +35,16 @@ const Login = () => {
 
 const Header = () => (
   <div className="text-center">
-    <h2 className="text-3xl font-extrabold text-gray-800">
-      Login To CoachingKart
-    </h2>
-    <p className={`mt-2 ${textMutedClasses}`}>Choose your role to login</p>
+    <h2 className="text-4xl font-bold text-gray-800">Welcome Back</h2>
+    <p className={`mt-2 ${textMutedClasses}`}>
+      Login to access your personalized dashboard
+    </p>
   </div>
 );
 
 const LoginForm = ({ onSubmit }) => (
   <form className="mt-8 space-y-6" onSubmit={onSubmit}>
-    <input type="hidden" name="remember" value="true" />
-    <div className="rounded-md shadow-sm -space-y-px">
+    <div className="space-y-4">
       <InputField id="email" type="email" placeholder="Email address" />
       <InputField id="password" type="password" placeholder="Password" />
     </div>
@@ -70,21 +67,21 @@ const InputField = ({ id, type, placeholder }) => (
       type={type}
       autoComplete={id}
       required
-      className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+      className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
       placeholder={placeholder}
     />
   </div>
 );
 
 const RememberMe = () => (
-  <div className={containerClasses}>
+  <div className="flex items-center">
     <input
       id="remember-me"
       name="remember-me"
       type="checkbox"
       className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
     />
-    <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-500">
+    <label htmlFor="remember-me" className="ml-2 text-sm text-gray-600">
       Remember me
     </label>
   </div>
@@ -93,21 +90,19 @@ const RememberMe = () => (
 const ForgotPassword = () => (
   <div className="text-sm">
     <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-      Forgot your password?
+      Forgot password?
     </a>
   </div>
 );
 
 const SubmitButton = ({ onClick }) => (
-  <div>
-    <button
-      type="submit"
-      className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-      onClick={onClick}
-    >
-      Sign in
-    </button>
-  </div>
+  <button
+    type="submit"
+    className="w-full py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+    onClick={onClick}
+  >
+    Sign In
+  </button>
 );
 
 const RoleButtons = () => (
@@ -122,21 +117,21 @@ const RoleButtons = () => (
 );
 
 const SignUpPrompt = () => {
-  const navigate = useNavigate(); // Use the navigate hook here
+  const navigate = useNavigate();
 
   const handleSignUp = () => {
-    navigate("register"); // Navigate to /register on click
+    navigate("/register");
   };
 
   return (
     <div className="mt-6 text-center">
       <p className={textMutedClasses}>
-        Don't have an account?{" "}
+        Don’t have an account?{" "}
         <button
           onClick={handleSignUp}
           className="font-medium text-indigo-600 hover:text-indigo-500"
         >
-          Sign up
+          Sign up now
         </button>
       </p>
     </div>
