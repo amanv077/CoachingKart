@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { Link } from "react-router-dom";
 
 // Tailwind CSS styling classes for reusable components
 const sharedClasses = {
@@ -13,7 +14,7 @@ const sharedClasses = {
 };
 
 const HeroSection = () => (
-  <section className="p-8 bg-blue-600 text-white">
+  <section className="p-8 bg-gray-200 text-black">
     <div className={sharedClasses.sectionContent}>
       <div className="m-5">
         <img
@@ -75,12 +76,11 @@ const CourseCard = ({
     >
       Enroll Now
     </button>
-    <button
-      className="mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
-      onClick={onEnroll}
-    >
-      Take Demo
-    </button>
+    <Link to="/online-demo">
+      <button className="mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+        Take Demo
+      </button>
+    </Link>
   </div>
 );
 
@@ -277,7 +277,7 @@ const BuyNowPage = ({ course, onBack }) => {
   );
 };
 
-const App = () => {
+const Course = () => {
   const [selectedCourse, setSelectedCourse] = useState(null);
 
   const handleEnroll = (course) => {
@@ -304,4 +304,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Course;

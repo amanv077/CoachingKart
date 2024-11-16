@@ -7,6 +7,7 @@ import Offline from "./component/Offline";
 import Register from "./component/Register";
 import Enrolled from "./component/Enrolled";
 import OfflineDemo from "./component/OfflineDemo";
+import OnlineDemo from "./component/OnlineDemo";
 
 const App = () => (
   <Router>
@@ -19,6 +20,7 @@ const App = () => (
       <Route path="/register" element={<Register />} />
       <Route path="/enrolled" element={<Enrolled />} />
       <Route path="/offline-demo" element={<OfflineDemo />} />
+      <Route path="/online-demo" element={<OnlineDemo />} />
     </Routes>
   </Router>
 );
