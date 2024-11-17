@@ -231,7 +231,7 @@ const CoachingCard = ({ center }) => {
         className={sharedClasses.button}
         onClick={() => navigate("/offline-demo")}
       >
-        Enroll Now
+        Book Demo
       </button>
     </div>
   );

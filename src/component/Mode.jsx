@@ -57,7 +57,7 @@ const HeroSection = () => {
 const SupportSection = () => (
   <section className="support-section bg-gray-100 py-16 text-center">
     <h2 className="text-3xl font-semibold mb-6">
-      Need Help? We're Here For You
+      Need Help? We are Here For You
     </h2>
     <p className="text-lg mb-4 text-gray-700">
       Our dedicated support team is always ready to assist you. Whether you have
